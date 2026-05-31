@@ -30,13 +30,11 @@ class BST {
         }
         if (val < currentNode->value) {
             currentNode->leftChild = insertNode(currentNode->leftChild, val);
-        } 
-        else if (val > currentNode->value) {
+        } else if (val > currentNode->value) {
             currentNode->rightChild = insertNode(currentNode->rightChild, val);
         } else {
             currentNode->count++;
         }
-        
         return currentNode;
     }
 
@@ -44,10 +42,8 @@ class BST {
         if (currentNode == nullptr) {
             return -1;
         }
-       
         int leftHeight = calculateHeight(currentNode->leftChild);
         int rightHeight = calculateHeight(currentNode->rightChild);
-        
         return (leftHeight > rightHeight ? leftHeight : rightHeight) + 1;
     }
 
@@ -55,7 +51,6 @@ class BST {
         if (currentNode == nullptr) {
             return 0;
         }
-        
         if (val == currentNode->value) {
             return currentNode->count;
         }
@@ -71,10 +66,8 @@ class BST {
         if (currentNode == nullptr) {
             return;
         }
-        
         clearTree(currentNode->leftChild);
         clearTree(currentNode->rightChild);
-        
         delete currentNode;
     }
 
@@ -82,7 +75,6 @@ class BST {
         if (currentNode == nullptr) {
             return;
         }
-        
         collectNodes(currentNode->leftChild, result);
         result.push_back({currentNode->value, currentNode->count});
         collectNodes(currentNode->rightChild, result);
