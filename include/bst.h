@@ -28,14 +28,12 @@ class BST {
             totalElements++;
             return new TreeNode(val);
         }
-        
         if (val < currentNode->value) {
             currentNode->leftChild = insertNode(currentNode->leftChild, val);
         } 
         else if (val > currentNode->value) {
             currentNode->rightChild = insertNode(currentNode->rightChild, val);
-        } 
-        else {
+        } else {
             currentNode->count++;
         }
         
@@ -46,7 +44,7 @@ class BST {
         if (currentNode == nullptr) {
             return -1;
         }
-        
+       
         int leftHeight = calculateHeight(currentNode->leftChild);
         int rightHeight = calculateHeight(currentNode->rightChild);
         
@@ -123,7 +121,5 @@ class BST {
         return result;
     }
 };
-
-#endif  // INCLUDE_BST_H_
 
 #endif  // INCLUDE_BST_H_
