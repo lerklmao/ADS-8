@@ -54,11 +54,9 @@ class BST {
         if (val == currentNode->value) {
             return currentNode->count;
         }
-        
         if (val < currentNode->value) {
             return findCount(currentNode->leftChild, val);
         }
-        
         return findCount(currentNode->rightChild, val);
     }
 
