@@ -59,6 +59,5 @@ void printFreq(BST<std::string>& tree) {
     for (const auto& node : allNodes) {
         outputFile << node.first << ": " << node.second << std::endl;
     }
-    
     outputFile.close();
 }
